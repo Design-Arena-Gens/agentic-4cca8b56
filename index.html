@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile Simon Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Simon Memory</h1>
+        <p class="tagline">Tap the lights. Match the loop. Chase the streak.</p>
+      </header>
+
+      <section class="board-wrapper">
+        <div class="board" role="application" aria-label="Simon Memory Board">
+          <button
+            class="pad pad-green"
+            data-color="green"
+            aria-label="Green pad"
+          ></button>
+          <button
+            class="pad pad-red"
+            data-color="red"
+            aria-label="Red pad"
+          ></button>
+          <button
+            class="pad pad-yellow"
+            data-color="yellow"
+            aria-label="Yellow pad"
+          ></button>
+          <button
+            class="pad pad-blue"
+            data-color="blue"
+            aria-label="Blue pad"
+          ></button>
+        </div>
+        <div class="controls">
+          <button class="primary-button" id="startButton">Start Round</button>
+          <button class="secondary-button" id="restartButton">
+            Reset Game
+          </button>
+          <label class="toggle">
+            <input type="checkbox" id="strictToggle" />
+            <span>Strict Mode</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="status-panel">
+        <div class="status-card">
+          <div class="label">Round</div>
+          <div class="value" id="roundCount">0</div>
+        </div>
+        <div class="status-card">
+          <div class="label">Best</div>
+          <div class="value" id="bestScore">0</div>
+        </div>
+        <div class="status-card status-wide">
+          <div class="label">Status</div>
+          <div class="value status-value" id="statusMessage">
+            Tap start to begin
+          </div>
+        </div>
+      </section>
+
+      <section class="instructions">
+        <h2>How to Play</h2>
+        <ol>
+          <li>Tap <strong>Start Round</strong> to watch the light sequence.</li>
+          <li>Repeat the pattern by tapping each pad in order.</li>
+          <li>
+            Each success unlocks a longer sequence. Miss once in strict mode and
+            the game resets.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for quick thumbs &amp; sharp minds.</p>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
